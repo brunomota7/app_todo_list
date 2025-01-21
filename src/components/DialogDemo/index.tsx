@@ -14,49 +14,41 @@ export default function DialogDemo() {
                     <Pencil />
                 </Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-[350px]">
+            <DialogContent className="w-full sm:max-w-[350px]">
                 <DialogHeader>
                     <DialogTitle>EDIT</DialogTitle>
-                    <DialogDescription>
-                        Edit the task information.
-                    </DialogDescription>
+                    <DialogDescription>Edit the task information.</DialogDescription>
                 </DialogHeader>
                 <div className="grid gap-4 py-4">
                     <div className="flex flex-col items-left gap-2">
-                        <Label>
-                            Task
-                        </Label>
-                        <Input id="taskName" type="text" className="col-span-3" />
+                        <Label>Task</Label>
+                        <Input id="taskName" type="text" />
                     </div>
                     <div className="flex flex-col items-left gap-2">
-                        <Label>
-                            Description
-                        </Label>
-                        <Textarea className="col-span-3 resize-none" />
+                        <Label>Description</Label>
+                        <Textarea className="resize-none" />
                     </div>
-                    <div className="flex items-center justify-between gap-1">
-                        <div className="flex flex-col gap-2">
-                            <Label>
-                                Deadline
-                            </Label>
-                            <Input id="taskName" type="date" className="col-span-3" />
+                    <div className="grid grid-rows-1 sm:flex-col items-center gap-4">
+                        <div className="flex flex-col">
+                            <Label>Deadline</Label>
+                            <Input id="taskName" type="date" />
                         </div>
-                        <div className="flex flex-col gap-2">
-                                <Label htmlFor="taskStatus">Status</Label>
-                                <Select>
-                                    <SelectTrigger id="taskStatus" className="w-32">
-                                        <SelectValue placeholder="Select" />
-                                    </SelectTrigger>
-                                    <SelectContent position="popper">
-                                        <SelectItem value="completed">Completed</SelectItem>
-                                        <SelectItem value="doing">Doing</SelectItem>
-                                        <SelectItem value="retard">Retard</SelectItem>
-                                    </SelectContent>
-                                </Select>
-                            </div>
+                        <div className="flex flex-col">
+                            <Label htmlFor="taskStatus">Status</Label>
+                            <Select>
+                                <SelectTrigger id="taskStatus" className="w-full sm:w-full">
+                                    <SelectValue placeholder="Select" />
+                                </SelectTrigger>
+                                <SelectContent position="popper">
+                                    <SelectItem value="completed">Completed</SelectItem>
+                                    <SelectItem value="doing">Doing</SelectItem>
+                                    <SelectItem value="retard">Retard</SelectItem>
+                                </SelectContent>
+                            </Select>
+                        </div>
                     </div>
                 </div>
-                <Button>Save</Button>
+                <Button className="w-full">Save</Button>
             </DialogContent>
         </Dialog>
     );

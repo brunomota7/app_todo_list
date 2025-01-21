@@ -6,12 +6,10 @@ export default function ButtonAdd() {
     return (
         <Dialog>
             <DialogTrigger asChild className="mb-4">
-                <Button>
-                    Create new task
-                </Button>
+                <Button className="w-full sm:w-auto">Create new task</Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px] flex items-center justify-center">
-                <CardAddForm /> {/* Card AddForm is a custom component */}
+                <CardAddForm />
             </DialogContent>
         </Dialog>
     );
