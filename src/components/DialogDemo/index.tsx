@@ -4,6 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Pencil } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 
 export default function DialogDemo() {
     return (
@@ -21,25 +22,41 @@ export default function DialogDemo() {
                     </DialogDescription>
                 </DialogHeader>
                 <div className="grid gap-4 py-4">
-                    <div className="grid grid-cols-4 items-center gap-2">
+                    <div className="flex flex-col items-left gap-2">
                         <Label>
                             Task
                         </Label>
                         <Input id="taskName" type="text" className="col-span-3" />
                     </div>
-                    <div className="grid grid-cols-4 items-center gap-2">
+                    <div className="flex flex-col items-left gap-2">
                         <Label>
                             Description
                         </Label>
                         <Textarea className="col-span-3 resize-none" />
                     </div>
-                    <div className="grid grid-cols-4 items-center gap-2">
-                        <Label>
-                            Deadline
-                        </Label>
-                        <Input id="taskName" type="date" className="col-span-2" />
+                    <div className="flex items-center justify-between gap-2">
+                        <div className="flex flex-col gap-2">
+                            <Label>
+                                Deadline
+                            </Label>
+                            <Input id="taskName" type="date" className="col-span-3" />
+                        </div>
+                        <div className="flex flex-col gap-2">
+                                <Label htmlFor="taskStatus">Status</Label>
+                                <Select>
+                                    <SelectTrigger id="taskStatus" className="w-40">
+                                        <SelectValue placeholder="Select" />
+                                    </SelectTrigger>
+                                    <SelectContent position="popper">
+                                        <SelectItem value="completed">Completed</SelectItem>
+                                        <SelectItem value="doing">Doing</SelectItem>
+                                        <SelectItem value="retard">Retard</SelectItem>
+                                    </SelectContent>
+                                </Select>
+                            </div>
                     </div>
                 </div>
+                <Button>Salve</Button>
             </DialogContent>
         </Dialog>
     );
