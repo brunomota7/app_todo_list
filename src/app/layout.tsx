@@ -7,8 +7,9 @@ const poppins = Poppins({
   subsets: ['latin'],
 });
 
+
 export const metadata: Metadata = {
-  title: "To-Do List | Auth",
+  title: "To-Do List | Home",
   description: "Sua agenda digital",
 };
 
@@ -20,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={poppins.className}>
-        {children}
+          {children}
       </body>
     </html>
   );

@@ -14,7 +14,7 @@ export default function DialogDemo() {
                     <Pencil />
                 </Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-[425px]">
+            <DialogContent className="sm:max-w-[350px]">
                 <DialogHeader>
                     <DialogTitle>EDIT</DialogTitle>
                     <DialogDescription>
@@ -34,7 +34,7 @@ export default function DialogDemo() {
                         </Label>
                         <Textarea className="col-span-3 resize-none" />
                     </div>
-                    <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center justify-between gap-1">
                         <div className="flex flex-col gap-2">
                             <Label>
                                 Deadline
@@ -44,7 +44,7 @@ export default function DialogDemo() {
                         <div className="flex flex-col gap-2">
                                 <Label htmlFor="taskStatus">Status</Label>
                                 <Select>
-                                    <SelectTrigger id="taskStatus" className="w-40">
+                                    <SelectTrigger id="taskStatus" className="w-32">
                                         <SelectValue placeholder="Select" />
                                     </SelectTrigger>
                                     <SelectContent position="popper">
@@ -56,7 +56,7 @@ export default function DialogDemo() {
                             </div>
                     </div>
                 </div>
-                <Button>Salve</Button>
+                <Button>Save</Button>
             </DialogContent>
         </Dialog>
     );
