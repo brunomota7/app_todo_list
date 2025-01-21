@@ -1,18 +1,21 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { Label } from "../ui/label";
+import { Input } from "../ui/input";
+import { Textarea } from "../ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 
-export default function CardAddForm() {
+export default function NewTask() {
     return (
-        <Card className="w-full sm:w-[350px]">
-            <CardHeader>
-                <CardTitle>CREATE NEW TASK</CardTitle>
-                <CardDescription>Create a new activity.</CardDescription>
-            </CardHeader>
-            <CardContent>
+        <Dialog>
+            <DialogTrigger asChild className="mb-4">
+                <Button className="w-full sm:w-auto">Create new task</Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[425px] flex flex-col items-left justify-center">
+                <DialogHeader>
+                    <DialogTitle>CREATE NEW TASK</DialogTitle>
+                    <DialogDescription>Create a new activity.</DialogDescription>
+                </DialogHeader>
                 <form>
                     <div className="grid w-full items-center gap-4">
                         <div className="flex flex-col space-y-1.5">
@@ -44,10 +47,10 @@ export default function CardAddForm() {
                         </div>
                     </div>
                 </form>
-            </CardContent>
-            <CardFooter className="flex justify-between">
-                <Button className="w-full">Create</Button>
-            </CardFooter>
-        </Card>
+                <DialogFooter className="flex justify-between">
+                    <Button className="w-full">Create</Button>
+                </DialogFooter>
+            </DialogContent>
+        </Dialog>
     );
 }
